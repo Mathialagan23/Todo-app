@@ -10,7 +10,7 @@
 }
 
 .todo-item:hover {
-  border-color: #667eea;
+  border-color: #4A4CBA;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -30,7 +30,7 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
-  accent-color: #667eea;
+  accent-color: #4A4CBA;
   margin-top: 2px;
   flex-shrink: 0;
 }

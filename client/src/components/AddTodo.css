@@ -16,7 +16,7 @@
 }
 
 .add-todo-input:focus {
-  border-color: #667eea;
+  border-color: #4A4CBA;
 }
 
 .add-todo-textarea {
@@ -32,12 +32,12 @@
 }
 
 .add-todo-textarea:focus {
-  border-color: #667eea;
+  border-color: #4A4CBA;
 }
 
 .add-todo-button {
   padding: 12px 24px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4A4CBA 0%, #6B6DD9 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -50,7 +50,7 @@
 
 .add-todo-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 5px 15px rgba(74, 76, 186, 0.4);
 }
 
 .add-todo-button:active {
