@@ -1,8 +1,12 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
-const AUTH_URL = `${API_URL}/auth`;
-const TODOS_URL = `${API_URL}/todos`;
+if (!process.env.REACT_APP_API_URL) {
+  throw new Error('REACT_APP_API_URL is not defined');
+}
+
+const API_URL = process.env.REACT_APP_API_URL;
+const AUTH_URL = `${API_URL}/api/auth`;
+const TODOS_URL = `${API_URL}/api/todos`;
 
 // Auth API
 const authApi = axios.create({
@@ -29,9 +33,7 @@ api.interceptors.request.use(
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
 // Auth functions
@@ -71,8 +73,10 @@ export const deleteTodo = async (id) => {
     const response = await api.delete(`/${id}`);
     return response.data;
   } catch (error) {
-    // Extract error message from response if available
-    const errorMessage = error.response?.data?.message || error.message || 'Failed to delete todo';
+    const errorMessage =
+      error.response?.data?.message ||
+      error.message ||
+      'Failed to delete todo';
     throw new Error(errorMessage);
   }
 };
